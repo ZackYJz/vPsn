@@ -1,6 +1,6 @@
 package com.zackyj.vhr.mapper;
 
-import com.zackyj.vhr.model.MsgContent;
+import com.zackyj.vhr.model.pojo.MsgContent;
 
 public interface MsgContentMapper {
     int deleteByPrimaryKey(Integer id);

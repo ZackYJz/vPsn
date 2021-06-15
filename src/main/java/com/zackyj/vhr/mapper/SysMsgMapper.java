@@ -1,6 +1,6 @@
 package com.zackyj.vhr.mapper;
 
-import com.zackyj.vhr.model.SysMsg;
+import com.zackyj.vhr.model.pojo.SysMsg;
 
 public interface SysMsgMapper {
     int deleteByPrimaryKey(Integer id);

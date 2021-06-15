@@ -1,6 +1,6 @@
 package com.zackyj.vhr.mapper;
 
-import com.zackyj.vhr.model.JObLevel;
+import com.zackyj.vhr.model.pojo.JObLevel;
 
 public interface JObLevelMapper {
     int deleteByPrimaryKey(Integer id);

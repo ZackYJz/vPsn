@@ -1,6 +1,6 @@
 package com.zackyj.vhr.mapper;
 
-import com.zackyj.vhr.model.Appraise;
+import com.zackyj.vhr.model.pojo.Appraise;
 
 public interface AppraiseMapper {
     int deleteByPrimaryKey(Integer id);

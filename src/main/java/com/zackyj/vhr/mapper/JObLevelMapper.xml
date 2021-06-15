@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zackyj.vhr.mapper.JObLevelMapper">
-  <resultMap id="BaseResultMap" type="com.zackyj.vhr.model.JObLevel">
+  <resultMap id="BaseResultMap" type="com.zackyj.vhr.model.pojo.JObLevel">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="titleLevel" jdbcType="CHAR" property="titlelevel" />
@@ -21,13 +21,13 @@
     delete from joblevel
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.zackyj.vhr.model.JObLevel">
+  <insert id="insert" parameterType="com.zackyj.vhr.model.pojo.JObLevel">
     insert into joblevel (id, name, titleLevel, 
       createDate, enabled)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{titlelevel,jdbcType=CHAR}, 
       #{createdate,jdbcType=TIMESTAMP}, #{enabled,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.zackyj.vhr.model.JObLevel">
+  <insert id="insertSelective" parameterType="com.zackyj.vhr.model.pojo.JObLevel">
     insert into joblevel
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zackyj.vhr.model.JObLevel">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zackyj.vhr.model.pojo.JObLevel">
     update joblevel
     <set>
       <if test="name != null">
@@ -82,7 +82,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zackyj.vhr.model.JObLevel">
+  <update id="updateByPrimaryKey" parameterType="com.zackyj.vhr.model.pojo.JObLevel">
     update joblevel
     set name = #{name,jdbcType=VARCHAR},
       titleLevel = #{titlelevel,jdbcType=CHAR},

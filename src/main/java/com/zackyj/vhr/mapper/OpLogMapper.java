@@ -1,6 +1,6 @@
 package com.zackyj.vhr.mapper;
 
-import com.zackyj.vhr.model.OpLog;
+import com.zackyj.vhr.model.pojo.OpLog;
 
 public interface OpLogMapper {
     int deleteByPrimaryKey(Integer id);

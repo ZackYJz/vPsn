@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zackyj.vhr.mapper.MenuMapper">
-  <resultMap id="BaseResultMap" type="com.zackyj.vhr.model.Menu">
+  <resultMap id="BaseResultMap" type="com.zackyj.vhr.model.pojo.Menu">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="url" jdbcType="VARCHAR" property="url" />
     <result column="path" jdbcType="VARCHAR" property="path" />
     <result column="component" jdbcType="VARCHAR" property="component" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="iconCls" jdbcType="VARCHAR" property="iconcls" />
-    <result column="keepAlive" jdbcType="BIT" property="keepalive" />
-    <result column="requireAuth" jdbcType="BIT" property="requireauth" />
-    <result column="parentId" jdbcType="INTEGER" property="parentid" />
+    <result column="iconCls" jdbcType="VARCHAR" property="iconCls" />
+    <result column="parentId" jdbcType="INTEGER" property="parentId" />
     <result column="enabled" jdbcType="BIT" property="enabled" />
+    <association property="menuMeta" javaType="com.zackyj.vhr.model.pojo.MenuMeta">
+      <result column="keepAlive" property="keepAlive" jdbcType="BIT"/>
+      <result column="requireAuth" property="requireAuth" jdbcType="BIT"/>
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     id, url, path, component, name, iconCls, keepAlive, requireAuth, parentId, enabled
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+    select * from menu m1,menu m2,hr_role hrr,menu_role mr
+        where
     <include refid="Base_Column_List" />
     from menu
     where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getMenusById" resultType="com.zackyj.vhr.model.pojo.Menu">
+    select <
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from menu
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.zackyj.vhr.model.Menu">
+  <insert id="insert" parameterType="com.zackyj.vhr.model.pojo.Menu">
     insert into menu (id, url, path, 
       component, name, iconCls, 
       keepAlive, requireAuth, parentId, 
@@ -36,7 +42,7 @@
       #{keepalive,jdbcType=BIT}, #{requireauth,jdbcType=BIT}, #{parentid,jdbcType=INTEGER}, 
       #{enabled,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.zackyj.vhr.model.Menu">
+  <insert id="insertSelective" parameterType="com.zackyj.vhr.model.pojo.Menu">
     insert into menu
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -103,7 +109,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zackyj.vhr.model.Menu">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zackyj.vhr.model.pojo.Menu">
     update menu
     <set>
       <if test="url != null">
@@ -136,7 +142,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zackyj.vhr.model.Menu">
+  <update id="updateByPrimaryKey" parameterType="com.zackyj.vhr.model.pojo.Menu">
     update menu
     set url = #{url,jdbcType=VARCHAR},
       path = #{path,jdbcType=VARCHAR},

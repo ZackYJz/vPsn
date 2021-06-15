@@ -1,6 +1,8 @@
 package com.zackyj.vhr.mapper;
 
-import com.zackyj.vhr.model.Menu;
+import com.zackyj.vhr.model.pojo.Menu;
+
+import java.util.List;
 
 public interface MenuMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +16,6 @@ public interface MenuMapper {
     int updateByPrimaryKeySelective(Menu record);
 
     int updateByPrimaryKey(Menu record);
+
+    List<Menu> getMenusById(Integer id);
 }

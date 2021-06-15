@@ -1,6 +1,6 @@
 package com.zackyj.vhr.mapper;
 
-import com.zackyj.vhr.model.Employeetrain;
+import com.zackyj.vhr.model.pojo.Employeetrain;
 
 public interface EmployeetrainMapper {
     int deleteByPrimaryKey(Integer id);

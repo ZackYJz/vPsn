@@ -1,4 +1,4 @@
-package com.zackyj.vhr.model;
+package com.zackyj.vhr.model.pojo;
 
 public class EmpSalary {
     private Integer id;

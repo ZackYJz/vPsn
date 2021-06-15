@@ -1,4 +1,4 @@
-package com.zackyj.vhr.model;
+package com.zackyj.vhr.model.pojo;
 
 import java.util.Date;
 

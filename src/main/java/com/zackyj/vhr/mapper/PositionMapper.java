@@ -1,6 +1,6 @@
 package com.zackyj.vhr.mapper;
 
-import com.zackyj.vhr.model.Position;
+import com.zackyj.vhr.model.pojo.Position;
 
 public interface PositionMapper {
     int deleteByPrimaryKey(Integer id);

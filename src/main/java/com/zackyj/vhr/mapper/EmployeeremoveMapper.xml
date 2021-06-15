@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zackyj.vhr.mapper.EmployeeremoveMapper">
-  <resultMap id="BaseResultMap" type="com.zackyj.vhr.model.Employeeremove">
+  <resultMap id="BaseResultMap" type="com.zackyj.vhr.model.pojo.Employeeremove">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="eid" jdbcType="INTEGER" property="eid" />
     <result column="afterDepId" jdbcType="INTEGER" property="afterdepid" />
@@ -23,7 +23,7 @@
     delete from employeeremove
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.zackyj.vhr.model.Employeeremove">
+  <insert id="insert" parameterType="com.zackyj.vhr.model.pojo.Employeeremove">
     insert into employeeremove (id, eid, afterDepId, 
       afterJobId, removeDate, reason, 
       remark)
@@ -31,7 +31,7 @@
       #{afterjobid,jdbcType=INTEGER}, #{removedate,jdbcType=DATE}, #{reason,jdbcType=VARCHAR}, 
       #{remark,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.zackyj.vhr.model.Employeeremove">
+  <insert id="insertSelective" parameterType="com.zackyj.vhr.model.pojo.Employeeremove">
     insert into employeeremove
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zackyj.vhr.model.Employeeremove">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zackyj.vhr.model.pojo.Employeeremove">
     update employeeremove
     <set>
       <if test="eid != null">
@@ -104,7 +104,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zackyj.vhr.model.Employeeremove">
+  <update id="updateByPrimaryKey" parameterType="com.zackyj.vhr.model.pojo.Employeeremove">
     update employeeremove
     set eid = #{eid,jdbcType=INTEGER},
       afterDepId = #{afterdepid,jdbcType=INTEGER},

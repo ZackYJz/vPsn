@@ -1,6 +1,6 @@
 package com.zackyj.vhr.mapper;
 
-import com.zackyj.vhr.model.Nation;
+import com.zackyj.vhr.model.pojo.Nation;
 
 public interface NationMapper {
     int deleteByPrimaryKey(Integer id);

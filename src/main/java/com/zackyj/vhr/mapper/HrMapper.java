@@ -1,6 +1,6 @@
 package com.zackyj.vhr.mapper;
 
-import com.zackyj.vhr.model.Hr;
+import com.zackyj.vhr.model.pojo.Hr;
 
 public interface HrMapper {
     int deleteByPrimaryKey(Integer id);

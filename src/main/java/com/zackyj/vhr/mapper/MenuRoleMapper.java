@@ -1,6 +1,6 @@
 package com.zackyj.vhr.mapper;
 
-import com.zackyj.vhr.model.MenuRole;
+import com.zackyj.vhr.model.pojo.MenuRole;
 
 public interface MenuRoleMapper {
     int deleteByPrimaryKey(Integer id);

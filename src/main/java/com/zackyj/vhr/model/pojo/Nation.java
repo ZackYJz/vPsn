@@ -1,6 +1,6 @@
-package com.zackyj.vhr.model;
+package com.zackyj.vhr.model.pojo;
 
-public class Politicsstatus {
+public class Nation {
     private Integer id;
 
     private String name;

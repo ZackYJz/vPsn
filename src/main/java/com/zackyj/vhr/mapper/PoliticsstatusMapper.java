@@ -1,6 +1,6 @@
 package com.zackyj.vhr.mapper;
 
-import com.zackyj.vhr.model.Politicsstatus;
+import com.zackyj.vhr.model.pojo.Politicsstatus;
 
 public interface PoliticsstatusMapper {
     int deleteByPrimaryKey(Integer id);

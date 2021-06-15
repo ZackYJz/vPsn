@@ -1,6 +1,6 @@
 package com.zackyj.vhr.mapper;
 
-import com.zackyj.vhr.model.AdjustSalary;
+import com.zackyj.vhr.model.pojo.AdjustSalary;
 
 public interface AdjustSalaryMapper {
     int deleteByPrimaryKey(Integer id);
